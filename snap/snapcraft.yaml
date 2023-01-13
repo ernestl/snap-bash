@@ -1,0 +1,20 @@
+name: snap-bash # you probably want to 'snapcraft register <name>'
+base: core22 # the base snap is the execution environment for this snap
+version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Bash shell as a snap # 79 char long summary
+description: |
+  Contained Bash shell
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  snap-bash:
+    command: /bin/snap-bash      
+
+parts:
+  snap-bash:
+    plugin: dump
+    source: .
+    organize:
+      snap-bash: bin/ 
