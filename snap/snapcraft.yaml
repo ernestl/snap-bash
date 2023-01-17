@@ -10,11 +10,12 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 apps:
   snap-bash:
-    command: /bin/snap-bash      
-
+    command: bin/snap-bash      
+    plugs: 
+      - home
 parts:
   snap-bash:
-    plugin: dump
-    source: .
+    source: bin/ 
+    plugin: dump 
     organize:
       snap-bash: bin/ 
