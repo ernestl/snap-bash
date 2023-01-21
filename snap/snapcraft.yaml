@@ -13,9 +13,11 @@ apps:
     command: bin/snap-bash      
     plugs: 
       - home
-parts:
+
+parts:  
   snap-bash:
-    source: bin/ 
-    plugin: dump 
+    source: source
+    plugin: dump
     organize:
-      snap-bash: bin/ 
+      snap-bash: bin/
+      snapshots.yaml: meta/ 
